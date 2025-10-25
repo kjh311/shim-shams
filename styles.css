@@ -1,0 +1,13 @@
+body {
+  background-color: #516489 !important;
+}
+.home-container {
+  /* max-width: 1200px; */
+  text-align: center;
+  font-size: 4em;
+}
+footer {
+  /* bottom: 0 !important; */
+  text-align: center;
+  font-size: 2em;
+}
