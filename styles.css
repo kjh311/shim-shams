@@ -1,5 +1,11 @@
+html {
+  /* This one line enables smooth scrolling for the entire page */
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #516489 !important;
+  /* background-color: #516489 !important; */
+  background-image: url("/assets/lined_paper.png");
 
   font-family: "Poetsen One", sans-serif !important;
   font-weight: 400;
@@ -46,4 +52,10 @@ footer {
     transform: scale(1);
     opacity: 0.8;
   }
+}
+
+.section {
+  min-height: 500px;
+  text-align: center;
+  font-size: 1.5em;
 }
