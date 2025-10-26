@@ -3,6 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.logo {
+  margin-top: 50px;
+}
+
 body {
   /* background-color: #516489 !important; */
   background-image: url("/assets/lined_paper.png");
@@ -20,6 +24,18 @@ footer {
   /* bottom: 0 !important; */
   text-align: center;
   font-size: 1.5em;
+}
+
+.gallery-image {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.3s ease-out !important;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.gallery-image:hover {
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
+  /* transition: all 0.3s ease-out; */
 }
 
 #spark {
@@ -55,7 +71,35 @@ footer {
 }
 
 .section {
-  min-height: 500px;
+  /* min-height: 500px; */
   text-align: center;
   font-size: 1.5em;
+}
+
+/* lightbox */
+
+#imageModal .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+/* Ensure the image fills the space */
+#modalImage {
+  max-height: 90vh; /* Limits the image height to keep buttons visible */
+  object-fit: contain;
+}
+
+/* Adjust button styling for better visibility on the image */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Make the click area smaller */
+  opacity: 0.8;
+}
+
+.gallery-image {
+  cursor: pointer; /* Indicate it's clickable */
+  transition: transform 0.2s;
+}
+.gallery-image:hover {
+  transform: scale(1.03);
 }
