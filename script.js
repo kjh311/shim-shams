@@ -2,6 +2,8 @@
 $(document).ready(function () {
   $(".dropdown-toggle").dropdown();
 });
+
+// FOOTER
 // Get the current year
 const currentYear = new Date().getFullYear();
 
@@ -51,5 +53,33 @@ document.addEventListener("DOMContentLoaded", function () {
       newIndex = images.length - 1; // Loop to the last image
     }
     updateModal(newIndex);
+  });
+});
+
+// CLOSE DROPDOWN AFTER SCROLL
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all links within the dropdown that should trigger the close action
+  document.querySelectorAll(".close-on-click").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      // Find the closest parent element with the Bootstrap 'dropdown' class
+      const dropdown = this.closest(".dropdown");
+
+      if (dropdown) {
+        // Get the Bootstrap Dropdown instance
+        // This targets the element with data-bs-toggle="dropdown" (the button/link that opened it)
+        const bsDropdown = bootstrap.Dropdown.getInstance(
+          dropdown.querySelector('[data-bs-toggle="dropdown"]')
+        );
+
+        if (bsDropdown) {
+          // Manually hide the dropdown menu
+          bsDropdown.hide();
+        }
+      }
+
+      // IMPORTANT: We DO NOT use e.preventDefault() here.
+      // This allows the link's default action (jumping/scrolling to the #target)
+      // to execute immediately after the dropdown starts closing.
+    });
   });
 });

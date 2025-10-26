@@ -9,9 +9,17 @@ html {
 
 body {
   /* background-color: #516489 !important; */
-  background-image: url("./assets/lined_paper.png");
+  /* background-image: url("./assets/lined_paper.png"); */
 
-  font-family: "Poetsen One", sans-serif !important;
+  /* font-family: "Poetsen One", sans-serif !important;
+  font-weight: 400;
+  font-style: normal; */
+
+  /* font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -24,6 +32,9 @@ footer {
   /* bottom: 0 !important; */
   text-align: center;
   font-size: 1.5em;
+  width: 100vw;
+  /* left: 0 !important;
+  position: relative; */
 }
 
 .gallery-image {
@@ -74,6 +85,16 @@ footer {
   /* min-height: 500px; */
   text-align: center;
   font-size: 1.5em;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.heading,
+.navbar-brand {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: bold;
 }
 
 /* lightbox */
