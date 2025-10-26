@@ -9,7 +9,7 @@ html {
 
 body {
   /* background-color: #516489 !important; */
-  background-image: url("/assets/lined_paper.png");
+  background-image: url("./assets/lined_paper.png");
 
   font-family: "Poetsen One", sans-serif !important;
   font-weight: 400;
