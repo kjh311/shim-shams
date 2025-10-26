@@ -96,6 +96,16 @@ footer {
   opacity: 0.8;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* Increase the size of the icon container */
+  width: 2rem; /* Original is typically 1.25rem */
+  height: 2rem;
+
+  /* Optional: Increase the size of the SVG background image itself */
+  background-size: 100% 100%;
+}
+
 .gallery-image {
   cursor: pointer; /* Indicate it's clickable */
   transition: transform 0.2s;
