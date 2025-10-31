@@ -1,7 +1,23 @@
 // alert("works!");
-$(document).ready(function () {
-  $(".dropdown-toggle").dropdown();
+// $(document).ready(function () {
+//   $(".dropdown-toggle").dropdown();
+// });
+
+// Vanilla JavaScript equivalent for Bootstrap 5
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Select all elements that have the 'dropdown-toggle' class
+  var dropdownToggleList = document.querySelectorAll(".dropdown-toggle");
+
+  // 2. Loop through the list and manually initialize each one
+  dropdownToggleList.forEach(function (dropdownToggleEl) {
+    // Uses the global 'bootstrap' object provided by the Bootstrap 5 JS bundle
+    new bootstrap.Dropdown(dropdownToggleEl);
+  });
 });
+
+// IMPORTANT NOTE: This manual initialization is generally NOT required
+// in Bootstrap 5 if you are correctly using the 'data-bs-toggle="dropdown"'
+// attribute in your HTML. Bootstrap 5 auto-initializes components based on those attributes.
 
 // FOOTER
 // Get the current year
@@ -59,27 +75,55 @@ document.addEventListener("DOMContentLoaded", function () {
 // CLOSE DROPDOWN AFTER SCROLL
 document.addEventListener("DOMContentLoaded", function () {
   // Select all links within the dropdown that should trigger the close action
-  document.querySelectorAll(".close-on-click").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      // Find the closest parent element with the Bootstrap 'dropdown' class
-      const dropdown = this.closest(".dropdown");
+  //   document.querySelectorAll(".close-on-click").forEach((anchor) => {
+  //     anchor.addEventListener("click", function (e) {
+  //       // Find the closest parent element with the Bootstrap 'dropdown' class
+  //       const dropdown = this.closest(".dropdown");
 
-      if (dropdown) {
-        // Get the Bootstrap Dropdown instance
-        // This targets the element with data-bs-toggle="dropdown" (the button/link that opened it)
-        const bsDropdown = bootstrap.Dropdown.getInstance(
-          dropdown.querySelector('[data-bs-toggle="dropdown"]')
-        );
+  //       if (dropdown) {
+  //         // Get the Bootstrap Dropdown instance
+  //         // This targets the element with data-bs-toggle="dropdown" (the button/link that opened it)
+  //         const bsDropdown = bootstrap.Dropdown.getInstance(
+  //           dropdown.querySelector('[data-bs-toggle="dropdown"]')
+  //         );
 
-        if (bsDropdown) {
-          // Manually hide the dropdown menu
-          bsDropdown.hide();
+  //         if (bsDropdown) {
+  //           // Manually hide the dropdown menu
+  //           bsDropdown.hide();
+  //         }
+  //       }
+
+  //       // IMPORTANT: We DO NOT use e.preventDefault() here.
+  //       // This allows the link's default action (jumping/scrolling to the #target)
+  //       // to execute immediately after the dropdown starts closing.
+  //     });
+  //   });
+
+  var navbarCollapse = document.getElementById("navbarNavDropdown");
+
+  // Select both nav-link and dropdown-item elements that are inside the collapse
+  var navLinks = navbarCollapse.querySelectorAll(".nav-link, .dropdown-item");
+
+  // Initialize the Bootstrap Collapse object
+  // This allows us to manually call the 'hide' method
+  var bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      // Check if the link is an internal anchor and if the menu is currently open
+      // We exclude links that have data-bs-toggle (like the dropdown toggle and modal links)
+      if (
+        this.hash &&
+        this.hash !== "#" &&
+        !this.getAttribute("data-bs-toggle")
+      ) {
+        // If the menu is currently open (has 'show' class), hide it
+        if (navbarCollapse.classList.contains("show")) {
+          bsCollapse.hide();
         }
-      }
 
-      // IMPORTANT: We DO NOT use e.preventDefault() here.
-      // This allows the link's default action (jumping/scrolling to the #target)
-      // to execute immediately after the dropdown starts closing.
+        // Note: Smooth scrolling is handled by the CSS property: scroll-behavior: smooth;
+      }
     });
   });
 });
