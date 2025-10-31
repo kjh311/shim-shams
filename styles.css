@@ -12,6 +12,11 @@
   font-style: normal;
 }
 
+[id] {
+  /* Set to roughly navbar height (56px) plus extra padding (14px) */
+  scroll-margin-top: 70px;
+}
+
 html {
   /* This one line enables smooth scrolling for the entire page */
   scroll-behavior: smooth;
