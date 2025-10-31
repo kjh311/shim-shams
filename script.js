@@ -83,3 +83,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// GSAP ANIMATION
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  fadeElements.forEach((element) => {
+    // Use gsap.from() to define the starting state of the element
+    gsap.from(element, {
+      // Starting state:
+      opacity: 0, // Start completely transparent
+      y: 50, // Start 50 pixels below its final position (for a subtle slide-up effect)
+      duration: 1, // Animation takes 0.8 seconds
+      ease: "power2.out", // Smooth easing function
+
+      // Link the animation to ScrollTrigger
+      scrollTrigger: {
+        trigger: element,
+        // Defines when the animation starts:
+        // "top" of the element hits "80%" down the viewport
+        start: "top 67%",
+        // Optional: Use markers for debugging where the trigger starts/ends
+        // markers: true,
+
+        // Optional: Toggle classes for advanced styling (e.g., adding a shadow class)
+        // toggleActions: "play none none none",
+      },
+    });
+  });
+
+  gsap.from(".logo", {
+    duration: 2, // Animation duration in seconds
+    opacity: 0, // Start with opacity 0 (fully transparent)
+    //   y: 40, // Optionally start slightly lower for a subtle "slide up" effect
+    ease: "power2.out", // Easing for a smoother look
+    visibility: "visible", // Ensure visibility is set to visible at the start of the tween
+  });
+
+  gsap.from("#intro", {
+    duration: 1.5, // Animation duration in seconds
+    opacity: 0, // Start with opacity 0 (fully transparent)
+    y: 40, // Optionally start slightly lower for a subtle "slide up" effect
+    ease: "power2.out", // Easing for a smoother look
+    visibility: "visible", // Ensure visibility is set to visible at the start of the tween
+  });
+
+  //   gsap.from("#about", {
+  //     duration: 1.5, // Animation duration in seconds
+  //     opacity: 0, // Start with opacity 0 (fully transparent)
+  //     x: 40, // Optionally start slightly lower for a subtle "slide up" effect
+  //     ease: "power2.out", // Easing for a smoother look
+  //     visibility: "visible", // Ensure visibility is set to visible at the start of the tween
+  //   });
+});
