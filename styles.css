@@ -140,8 +140,7 @@ footer {
   border-radius: 5px;
 }
 
-.listen-now,
-.get-merch {
+.black-button {
   font-family: var(--main-font);
   font-weight: 600;
   font-size: 1em;
@@ -149,20 +148,69 @@ footer {
   letter-spacing: 2px;
   color: white;
   background-color: black;
+  /* background-color: var(--logo-color); */
+  border: 5px solid var(--logo-color);
   padding: 20px;
   border-radius: 10px;
   /* margin-top: 40px !important; */
   display: inline-block;
   transition: all 0.3s ease-out !important;
+  cursor: pointer;
 }
 
-.listen-now:hover,
-.get-merch:hover {
+.black-button:hover {
   color: white;
   /* transition: all 0.3s ease-out !important; */
   text-decoration: none !important;
   transform: scale(1.1) !important;
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.coming-soon {
+  max-width: 80vw;
+}
+
+.fa-brands {
+}
+
+.fa-facebook-f {
+  color: #1877f2;
+}
+
+.fa-instagram {
+  color: #c13584;
+}
+
+.fa-spotify {
+  color: #1db954;
+}
+
+.fa-bandcamp {
+  color: #629aa9;
+}
+
+.fa-soundcloud {
+  color: #ff5500;
+}
+
+.fa-shopping-cart,
+.fa-music {
+  color: var(--logo-color);
+}
+
+.apple-music-logo {
+  /* This targets the SVG element */
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  margin-top: 1rem;
+  filter: invert(15%) sepia(74%) saturate(7386%) hue-rotate(328deg)
+    brightness(97%) contrast(107%);
+}
+
+.youtube-music-logo {
+  width: 48px;
+  height: 48px;
 }
 
 /* lightbox */
