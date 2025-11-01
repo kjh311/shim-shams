@@ -115,9 +115,14 @@ footer {
   /* border-bottom: 2px solid var(--logo-color); */
 }
 
+.nav-link {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
 .navbar-nav .nav-link:hover {
   color: #f0f0f0 !important;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
 .heading-text {
@@ -180,6 +185,7 @@ footer {
   display: inline-block;
   transition: all 0.3s ease-out !important;
   cursor: pointer;
+  margin: 10px;
 }
 
 .black-button:hover {
@@ -192,6 +198,14 @@ footer {
 
 .coming-soon {
   max-width: 80vw;
+}
+
+#social {
+  margin-bottom: 75px;
+}
+
+.form-card {
+  margin: 6px;
 }
 
 .fa-brands {
@@ -345,5 +359,9 @@ footer {
 
   .heading-text {
     font-size: 1em;
+  }
+
+  .navbar-nav .nav-link:hover {
+    border-bottom: 2px solid var(--logo-color);
   }
 }
