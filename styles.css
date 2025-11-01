@@ -267,6 +267,65 @@ footer {
   background-size: 100% 100%;
 }
 
+#contact {
+  /* Background for the entire section, matching the navbar's dark theme */
+  /* background-color: #212529; Deep charcoal/dark gray */
+  /* color: #f8f9fa; Light text for contrast */
+}
+
+#contact .form-label {
+  /* Makes labels slightly bolder and easier to read */
+  font-weight: 600;
+  color: #adb5bd; /* Subtle lighter color */
+}
+
+.contact-heading-text {
+  color: black !important;
+}
+
+#contact .form-control {
+  /* Style for all input and textarea fields */
+  background-color: #343a40; /* Darker input background */
+  color: #ffffff; /* White text input */
+  border: 1px solid #495057; /* Subtle border */
+  border-radius: 8px; /* Slightly more rounded corners */
+  padding: 12px 15px;
+  transition: all 0.3s;
+}
+
+#contact .form-control:focus {
+  /* Highlight effect when the user clicks into a field */
+  background-color: #495057;
+  border-color: #0d6efd; /* Blue focus color */
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+#contact .btn-dark {
+  /* Styling the submit button */
+  background-color: #0d6efd; /* Primary blue button color */
+  border-color: #0d6efd;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border-radius: 50px; /* Pill shape */
+  transition: background-color 0.3s ease;
+}
+
+#contact .btn-dark:hover {
+  background-color: #0a58ca; /* Slightly darker blue on hover */
+  border-color: #0a58ca;
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Optional: Adding a card-like container around the form for definition */
+/* NOTE: We changed the targeting class from .col-lg-8 to the new one in HTML for clarity */
+#contact .form-card {
+  background-color: #343a40;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
 .gallery-image {
   cursor: pointer; /* Indicate it's clickable */
   transition: transform 0.2s;
@@ -275,8 +334,16 @@ footer {
   transform: scale(1.03);
 }
 
+.heading-text {
+  font-size: 0.8em;
+}
+
 @media (min-width: 768px) {
   .album-date-br {
     display: none; /* Hides the line break on wide screens, forcing content onto one line */
+  }
+
+  .heading-text {
+    font-size: 1em;
   }
 }

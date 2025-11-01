@@ -321,9 +321,41 @@
     </div>
 
       <!-- CONTACT  -->
-    <div class="section mb-5 fade-in pt-5 " id="contact"><h1 class="heading"><span class="heading-text">CONTACT US</span></h1>
-        
-    </div>
+      <section id="contact" class="container fade-in" style="padding-top: 50px; padding-bottom: 80px;">
+        <h1 class="text-center mb-5 "><span class="heading-text">CONTACT US</span></h1>
+        <div class="row justify-content-center">
+            <!-- UPDATED: Changed from col-lg-8 to col-lg-10 to make the form wider -->
+            <!-- Added a utility class 'form-card' to link it easily to the styling -->
+            <div class="col-lg-10 col-md-10 form-card">
+                <form action="#" method="POST">
+                    
+                    <!-- Name Field -->
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    </div>
+                    
+                    <!-- Message/Question Field -->
+                    <div class="mb-3">
+                        <label for="messageTextarea" class="form-label">Your Question or Message</label>
+                        <textarea class="form-control" id="messageTextarea" rows="5" placeholder="Type your question here..." required></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-dark btn-lg">Submit Question</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- SOCIAL  -->
     <div class="section mb-5 fade-in pt-5" id="social"><h1 class="heading"><span class="heading-text">SOCIAL MEDIA</span></h1>
