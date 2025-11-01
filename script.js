@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         trigger: element,
         // Defines when the animation starts:
         // "top" of the element hits "80%" down the viewport
-        start: "top 67%",
+        start: "top 75%",
         // Optional: Use markers for debugging where the trigger starts/ends
         // markers: true,
 
