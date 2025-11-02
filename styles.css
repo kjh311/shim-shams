@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* VARIABLES  */
 @property --logo-color {
   syntax: "<color>";
@@ -13,94 +20,99 @@
 }
 
 [id] {
-  /* Set to roughly navbar height (56px) plus extra padding (14px) */
   scroll-margin-top: 70px;
 }
 
 html {
-  /* This one line enables smooth scrolling for the entire page */
   scroll-behavior: smooth;
 }
 
 .logo {
-  margin-top: 50px;
-  /* opacity: 0; */
-  /* visibility: hidden; */
+  margin-top: 60px;
 }
 
 body {
-  /* background-color: #516489 !important; */
-  /* background-image: url("./assets/lined_paper.png"); */
-
-  /* font-family: "Poetsen One", sans-serif !important;
-  font-weight: 400;
-  font-style: normal; */
-
-  /* font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-style: normal; */
   font-family: var(--main-font);
 }
 .home-container {
-  /* max-width: 1200px; */
   text-align: center;
   font-size: 4em;
 }
 footer {
-  /* bottom: 0 !important; */
   text-align: center;
   font-size: 1.5em;
   width: 100vw;
-  /* left: 0 !important;
-  position: relative; */
 }
 
 .gallery-image {
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5) !important;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5) !important;
+  -webkit-transition: all 0.3s ease-out !important;
+  -o-transition: all 0.3s ease-out !important;
   transition: all 0.3s ease-out !important;
   border: 2px solid black;
   border-radius: 5px;
 }
 
 .gallery-image:hover {
+  -webkit-box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
-  /* transition: all 0.3s ease-out; */
 }
 
 #spark {
-  /* 1. Animation Properties */
+  -webkit-animation-name: pulse;
   animation-name: pulse;
-  animation-duration: 0.5s; /* Time for one pulse cycle */
-  animation-iteration-count: infinite; /* Loop forever */
-  animation-timing-function: ease-in; /* Smooth start and end */
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
 
-  /* 2. Crucial for Centered Scaling in SVG */
-  /* Ensures the scaling happens from the element's center, not the SVG's corner */
+  -webkit-transform-origin: 35% 15%;
+
+  -ms-transform-origin: 35% 15%;
+
   transform-origin: 35% 15%;
 }
 
-/* 3. Keyframes Definition */
-
-@keyframes pulse {
+@-webkit-keyframes pulse {
   0% {
-    /* Start: Normal size, no rotation */
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0.8;
   }
   50% {
-    /* Midpoint: Peak pulse size, half rotation */
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
     opacity: 0.6;
   }
   100% {
-    /* End: Return to normal size, full rotation */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0.8;
   }
 }
 
 .section {
-  /* min-height: 500px; */
   text-align: center;
   font-size: 1.5em;
   max-width: 1500px;
@@ -112,7 +124,6 @@ footer {
   font-family: var(--main-font);
   font-weight: 900;
   letter-spacing: 2px;
-  /* border-bottom: 2px solid var(--logo-color); */
 }
 
 .nav-link {
@@ -121,6 +132,8 @@ footer {
 
 .navbar-nav .nav-link:hover {
   color: #f0f0f0 !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
@@ -139,7 +152,6 @@ footer {
 .new-album {
   font-family: var(--main-font);
   font-weight: 400;
-  /* font-style: bold; */
   letter-spacing: 2px;
   margin-top: 20px !important;
 }
@@ -147,7 +159,6 @@ footer {
 .album-date {
   font-family: var(--main-font);
   font-weight: 700;
-  /* font-style: bold; */
   letter-spacing: 2px;
   color: var(--logo-color);
   background-color: black;
@@ -173,16 +184,15 @@ footer {
   font-family: var(--main-font);
   font-weight: 600;
   font-size: 1em;
-  /* font-style: bold; */
   letter-spacing: 2px;
   color: white;
   background-color: black;
-  /* background-color: var(--logo-color); */
   border: 5px solid var(--logo-color);
   padding: 20px;
   border-radius: 10px;
-  /* margin-top: 40px !important; */
   display: inline-block;
+  -webkit-transition: all 0.3s ease-out !important;
+  -o-transition: all 0.3s ease-out !important;
   transition: all 0.3s ease-out !important;
   cursor: pointer;
   margin: 10px;
@@ -190,9 +200,11 @@ footer {
 
 .black-button:hover {
   color: white;
-  /* transition: all 0.3s ease-out !important; */
   text-decoration: none !important;
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
   transform: scale(1.1) !important;
+  -webkit-box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -232,16 +244,20 @@ footer {
 }
 
 .fa-window-close {
-  color: rgba(255, 255, 255, 0.8);
+  width: 50px;
+  height: 50px;
 }
 
 .btn-close {
   padding: 0 !important;
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid rgba(0, 0, 0, 0);
+  -webkit-transition: all 0.3s ease-out !important;
+  -o-transition: all 0.3s ease-out !important;
   transition: all 0.3s ease-out !important;
-  top: 5px;
-  right: 10px;
+  top: -5px;
+  right: -10px;
+  opacity: 0.6;
 }
 
 .fa-shopping-cart,
@@ -250,11 +266,12 @@ footer {
 }
 
 .apple-music-logo {
-  /* This targets the SVG element */
   width: 48px;
   height: 48px;
   display: inline-block;
   margin-top: 1rem;
+  -webkit-filter: invert(15%) sepia(74%) saturate(7386%) hue-rotate(328deg)
+    brightness(97%) contrast(107%);
   filter: invert(15%) sepia(74%) saturate(7386%) hue-rotate(328deg)
     brightness(97%) contrast(107%);
 }
@@ -264,79 +281,65 @@ footer {
   height: 48px;
 }
 
-/* lightbox */
+.fa-envelope {
+  color: var(--logo-color);
+}
 
 #imageModal .modal-content {
   background-color: transparent;
   border: none;
-  border: 5px solid var(--logo-color);
+  -webkit-box-shadow: 0 0 20px 10px var(--logo-color);
+  box-shadow: 0 0 20px 10px var(--logo-color);
 }
 
-/* Ensure the image fills the space */
 #modalImage {
-  max-height: 90vh; /* Limits the image height to keep buttons visible */
+  max-height: 90vh;
+  -o-object-fit: contain;
   object-fit: contain;
+  background-color: black;
 }
 
-/* Adjust button styling for better visibility on the image */
 .carousel-control-prev,
 .carousel-control-next {
-  width: 10%; /* Make the click area smaller */
+  width: 10%;
   opacity: 0.8;
   height: 150px;
   top: 50%;
+  -webkit-transition: all 0.3s ease-out !important;
+  -o-transition: all 0.3s ease-out !important;
   transition: all 0.3s ease-out !important;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover,
 .btn-close:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
-  /* transition: all 0.3s ease-out !important; */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  /* Increase the size of the icon container */
-  width: 2rem; /* Original is typically 1.25rem */
+  width: 2rem;
   height: 2rem;
 
-  /* Optional: Increase the size of the SVG background image itself */
   background-size: 150% 150%;
 }
 
-.modal-body {
-  /* display: flex;
-  justify-content: center; */
-}
-
 .modal-backdrop {
-  /* Use a very dark gray or black color */
   background-color: #000000;
+  -webkit-transition: opacity 0.3s ease-in-out !important;
+  -o-transition: opacity 0.3s ease-in-out !important;
   transition: opacity 0.3s ease-in-out !important;
-
-  /* Increase opacity to make it darker (80% opaque) */
-  /* opacity: 0.8 !important; */
-
-  /* Alternatively, you can use rgba for better control: */
-  /* background-color: rgba(0, 0, 0, 0.95); */
 }
 
 .modal-backdrop.show {
-  /* Increase opacity to make it darker (80% opaque) */
   opacity: 0.8 !important;
 }
 
-#contact {
-  /* Background for the entire section, matching the navbar's dark theme */
-  /* background-color: #212529; Deep charcoal/dark gray */
-  /* color: #f8f9fa; Light text for contrast */
-}
-
 #contact .form-label {
-  /* Makes labels slightly bolder and easier to read */
   font-weight: 600;
-  color: #adb5bd; /* Subtle lighter color */
+  color: #adb5bd;
 }
 
 .contact-heading-text {
@@ -344,53 +347,62 @@ footer {
 }
 
 #contact .form-control {
-  /* Style for all input and textarea fields */
-  background-color: #343a40; /* Darker input background */
-  color: #ffffff; /* White text input */
-  border: 1px solid #495057; /* Subtle border */
-  border-radius: 8px; /* Slightly more rounded corners */
+  background-color: #343a40;
+  color: #ffffff;
+  border: 1px solid #495057;
+  border-radius: 8px;
   padding: 12px 15px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 #contact .form-control:focus {
-  /* Highlight effect when the user clicks into a field */
   background-color: #495057;
-  border-color: #0d6efd; /* Blue focus color */
+  border-color: #0d6efd;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 #contact .btn-dark {
-  /* Styling the submit button */
-  background-color: #0d6efd; /* Primary blue button color */
+  background-color: #0d6efd;
   border-color: #0d6efd;
   font-weight: 700;
   letter-spacing: 1px;
   padding: 12px 30px;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
 #contact .btn-dark:hover {
-  background-color: #0a58ca; /* Slightly darker blue on hover */
+  background-color: #0a58ca;
   border-color: #0a58ca;
-  transform: translateY(-2px); /* Subtle lift on hover */
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
-/* Optional: Adding a card-like container around the form for definition */
-/* NOTE: We changed the targeting class from .col-lg-8 to the new one in HTML for clarity */
 #contact .form-card {
   background-color: #343a40;
   padding: 40px;
   border-radius: 12px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .gallery-image {
-  cursor: pointer; /* Indicate it's clickable */
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .gallery-image:hover {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
   transform: scale(1.03);
 }
 
@@ -400,7 +412,7 @@ footer {
 
 @media (min-width: 768px) {
   .album-date-br {
-    display: none; /* Hides the line break on wide screens, forcing content onto one line */
+    display: none;
   }
 
   .heading-text {
@@ -414,7 +426,8 @@ footer {
   .carousel-control-prev:hover,
   .carousel-control-next:hover,
   .btn-close:hover {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
-    /* transition: all 0.3s ease-out !important; */
   }
 }

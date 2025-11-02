@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand font-bold text-2xl" href="#outer-div">THE SHIM SHAMS</a>
+            <a class="navbar-brand  font-bold text-2xl" href="#outer-div">THE SHIM SHAMS</a>
             
             <!-- Toggler uses Bootstrap 5 attributes: data-bs-toggle and data-bs-target -->
             <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
               
               <ul class="navbar-nav ml-auto text-right" >
                 <li class="nav-item">
-                  <a class="nav-link " href="#about">About Us</a>
+                  <a class="nav-link link" href="#about">About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link " href="#store">Store</a>
@@ -271,7 +271,10 @@
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body p-0">
-                        <button type="button" class="btn-close  position-absolute top-0 end-0  " data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-2x fa-window-close" aria-hidden="true"></i></button>
+                        <button type="button" class="btn-close  position-absolute top-0 end-0  " data-bs-dismiss="modal" aria-label="Close">
+                            <!-- <i class="fa fa-2x fa-window-close" aria-hidden="true"></i> -->
+                             <img class="close-button-svg fa-window-close" src="./assets/close-button.svg" alt="">
+                        </button>
         
                         <button id="prevBtn" class="carousel-control-prev carousel-button " type="button">
                             <span class="carousel-control-prev-icon carousel-button" aria-hidden="true"></span>
@@ -305,54 +308,17 @@
         <p class="p-3">Stream "Here We Go" on your favorite platform:</p><br/>
         <div class="container">
             <div class="row">
-                <div class="col"><a class="black-button mb-2" hrer=""><i class="fa-brands fa-2x fa-spotify"></i> Spotify</a></div>
-                <div class="col"><a class="black-button mb-2" hrer=""><img src="./assets/apple-music.svg" alt="" class="apple-music-logo"><br/>Apple Music</a></div>
-                <div class="col"><a class="black-button mb-2" hrer=""><img src="./assets/Youtube_Music_Icon.png" alt="" class="youtube-music-logo"><br/>Youtube Music</a></div>
-                <div class="col"><a class="black-button mb-2" hrer=""><i class="fa-brands fa-2x fa-bandcamp"></i> Bandcamp</a></div>
-                <div class="col"><a class="black-button mb-2" hrer=""><i class="fa-brands fa-2x fa-soundcloud"></i> SoundCloud</a></div>
+                <div class="col"><a class="black-button mb-2" href="" target="blank"><i class="fa-brands fa-2x fa-spotify"></i> Spotify</a></div>
+                <div class="col"><a class="black-button mb-2" href="" target="blank"><img src="./assets/apple-music.svg" alt="" class="apple-music-logo"><br/>Apple Music</a></div>
+                <div class="col"><a class="black-button mb-2" href="" target="blank"><img src="./assets/Youtube_Music_Icon.png" alt="" class="youtube-music-logo"><br/>Youtube Music</a></div>
+                <div class="col"><a class="black-button mb-2" href="" target="blank"><i class="fa-brands fa-2x fa-bandcamp"></i> Bandcamp</a></div>
+                <div class="col"><a class="black-button mb-2" href="" target="blank"><i class="fa-brands fa-2x fa-soundcloud"></i> SoundCloud</a></div>
             </div>
         </div>
     </div>
 
-      <!-- CONTACT  -->
-      <section id="contact" class="container fade-in" style="padding-top: 50px; padding-bottom: 80px;">
-        <h1 class="text-center mb-5 "><span class="heading-text">CONTACT US</span></h1>
-        <div class="row justify-content-center">
-            <!-- UPDATED: Changed from col-lg-8 to col-lg-10 to make the form wider -->
-            <!-- Added a utility class 'form-card' to link it easily to the styling -->
-            <div class="col-lg-10 col-md-10 form-card">
-                <form action="#" method="POST">
-                    
-                    <!-- Name Field -->
-                    <div class="mb-3">
-                        <label for="nameInput" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
-                    </div>
-                    
-                    <!-- Email Field -->
-                    <div class="mb-3">
-                        <label for="emailInput" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
-                    </div>
-                    
-                    <!-- Message/Question Field -->
-                    <div class="mb-3">
-                        <label for="messageTextarea" class="form-label">Your Question or Message</label>
-                        <textarea class="form-control" id="messageTextarea" rows="5" placeholder="Type your question here..." required></textarea>
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-dark btn-lg">Submit Question</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- SOCIAL  -->
-    <div class="section  fade-in pt-5 " id="social"><h1 class="heading"><span class="heading-text">SOCIAL MEDIA</span></h1>
+      <!-- SOCIAL  -->
+      <div class="section  fade-in pt-5 " id="social"><h1 class="heading"><span class="heading-text">SOCIAL MEDIA</span></h1>
         <p class="social-text">Follow us on social media for the latest updates, behind-the-scenes content, and exlusive announcements!</p>
         <div class="container ">
             <div class="row">
@@ -361,6 +327,17 @@
             </div>
         </div>
     </div>
+
+      <!-- CONTACT  -->
+      <section id="contact" class="container fade-in" style="padding-top: 50px; padding-bottom: 80px;">
+        <h1 class="text-center mb-5 "><span class="heading-text">CONTACT US</span></h1>
+        <div class="row justify-content-center">
+             <a href="mailto:shimshams@email.com" class="email black-button mb-1 text-center"><i class="fa fa-2x fa-envelope" aria-hidden="true"></i> shimshams@email.com</a>
+        </div>
+    </section>
+    
+
+  
 
 
 
