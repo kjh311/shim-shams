@@ -231,6 +231,19 @@ footer {
   color: #ff5500;
 }
 
+.fa-window-close {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-close {
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: all 0.3s ease-out !important;
+  top: 5px;
+  right: 10px;
+}
+
 .fa-shopping-cart,
 .fa-music {
   color: var(--logo-color);
@@ -256,6 +269,7 @@ footer {
 #imageModal .modal-content {
   background-color: transparent;
   border: none;
+  border: 5px solid var(--logo-color);
 }
 
 /* Ensure the image fills the space */
@@ -267,8 +281,18 @@ footer {
 /* Adjust button styling for better visibility on the image */
 .carousel-control-prev,
 .carousel-control-next {
-  width: 5%; /* Make the click area smaller */
+  width: 10%; /* Make the click area smaller */
   opacity: 0.8;
+  height: 150px;
+  top: 50%;
+  transition: all 0.3s ease-out !important;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover,
+.btn-close:hover {
+  transform: scale(1.1);
+  /* transition: all 0.3s ease-out !important; */
 }
 
 .carousel-control-prev-icon,
@@ -278,7 +302,29 @@ footer {
   height: 2rem;
 
   /* Optional: Increase the size of the SVG background image itself */
-  background-size: 100% 100%;
+  background-size: 150% 150%;
+}
+
+.modal-body {
+  /* display: flex;
+  justify-content: center; */
+}
+
+.modal-backdrop {
+  /* Use a very dark gray or black color */
+  background-color: #000000;
+  transition: opacity 0.3s ease-in-out !important;
+
+  /* Increase opacity to make it darker (80% opaque) */
+  /* opacity: 0.8 !important; */
+
+  /* Alternatively, you can use rgba for better control: */
+  /* background-color: rgba(0, 0, 0, 0.95); */
+}
+
+.modal-backdrop.show {
+  /* Increase opacity to make it darker (80% opaque) */
+  opacity: 0.8 !important;
 }
 
 #contact {
@@ -363,5 +409,12 @@ footer {
 
   .navbar-nav .nav-link:hover {
     border-bottom: 2px solid var(--logo-color);
+  }
+
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover,
+  .btn-close:hover {
+    transform: scale(1.5);
+    /* transition: all 0.3s ease-out !important; */
   }
 }

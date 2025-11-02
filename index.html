@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/font-awesome-animation"> -->
+     
     <link rel="stylesheet" href="styles.css">
 
     <!-- The favicon link goes here -->
@@ -223,12 +225,12 @@
         <h2 class="subtext">HERE WE GO</h2>
         <br/>
         <h3 class="new-album">NEW ALBUM <br class="album-date-br"/><br class="album-date-br"/> <span class="album-date">12 / 19 / 25</span></h3>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col"></div>
                 <div class="col"></div>
             </div>
-        </div>
+        </div> -->
         <br/>
         <br/>
         <a class="listen-now black-button mb-2" href="#music"><i class="fa-solid fa-2x fa-music"></i> <br/>LISTEN NOW</a>
@@ -246,27 +248,19 @@
         From intimate venues to festival stages, The Shim Shams deliver performances that leave crowds wanting more. Their passion for music and connection with fans has built a dedicated following that continues to grow.</p>
         <div class="container my-5">
             <!-- <h2>Image Gallery</h2> -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 ">
+            <div class="row row-cols-1 row-cols-md-2 g-4 ">
                 
                 <div class="col fade-in">
-                    <img src="./assets/band1.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="Pic 1" 
+                    <img src="./assets/band1.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="The Shim Shams" 
                          data-image-index="0" data-bs-toggle="modal" data-bs-target="#imageModal">
                 </div>
                 
                 <div class="col fade-in">
-                    <img src="./assets/band2.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="Pic 2" 
+                    <img src="./assets/band2.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="Playing at Marble Brewery" 
                          data-image-index="1" data-bs-toggle="modal" data-bs-target="#imageModal">
                 </div>
         
-                <div class="col fade-in">
-                    <img src="./assets/band3.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="Pic 3" 
-                         data-image-index="2" data-bs-toggle="modal" data-bs-target="#imageModal">
-                </div>
-        
-                <div class="col fade-in">
-                    <img src="./assets/band4.jpg" class="img-fluid mt-2 rounded  gallery-image" alt="Pic 4" 
-                         data-image-index="3" data-bs-toggle="modal" data-bs-target="#imageModal">
-                </div>
+             
                 
             </div>
         </div>
@@ -277,9 +271,9 @@
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body p-0">
-                        <!-- <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                        <button type="button" class="btn-close  position-absolute top-0 end-0  " data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-2x fa-window-close" aria-hidden="true"></i></button>
         
-                        <button id="prevBtn" class="carousel-control-prev carousel-button" type="button">
+                        <button id="prevBtn" class="carousel-control-prev carousel-button " type="button">
                             <span class="carousel-control-prev-icon carousel-button" aria-hidden="true"></span>
                             <!-- <span class="visually-hidden">Previous</span> -->
                         </button>
