@@ -1,9 +1,9 @@
 // FOOTER
-const currentYear = new Date().getFullYear();
+// const currentYear = new Date().getFullYear();
 
-document.getElementById(
-  "copyright-year"
-).textContent = ` © The Shim Shams ${currentYear}`;
+// document.getElementById(
+//   "copyright-year"
+// ).textContent = ` © The Shim Shams ${currentYear}`;
 
 // modal
 document.addEventListener("DOMContentLoaded", function () {
