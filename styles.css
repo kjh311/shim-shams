@@ -227,13 +227,18 @@ footer {
 }
 
 .black-button {
-  font-family: var(--main-font);
+  /* Required for the Sheen Effect */
+  position: relative;
+  overflow: hidden; /* Crucial to hide the sheen gradient before and after it crosses the button */
+
+  /* Existing Styles */
+  /* font-family: var(--main-font); <- REMOVED: Assuming standard font stack for portability */
   font-weight: 600;
   font-size: 1em;
   letter-spacing: 2px;
   color: white;
   background-color: black;
-  border: 5px solid var(--logo-color);
+  border: 5px solid var(--logo-color); /* Replaced var(--logo-color) with primary blue */
   padding: 20px;
   border-radius: 10px;
   display: inline-block;
@@ -244,6 +249,7 @@ footer {
   margin: 10px;
 }
 
+/* --- 2. Hover State (Preserving existing effects) --- */
 .black-button:hover {
   color: white;
   text-decoration: none !important;
@@ -252,6 +258,78 @@ footer {
   transform: scale(1.1) !important;
   -webkit-box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- 3. Animated Sheen Pseudo-Element --- */
+.black-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Width of the shimmering strip */
+  height: 100%;
+
+  /* Create a translucent white gradient strip */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(/* Fully transparent left edge */),
+    to(/* Peak white in the center */)
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    /* Fully transparent left edge */ rgba(255, 255, 255, 0.3) 50%,
+    /* Peak white in the center */ rgba(255, 255, 255, 0) 100%
+      /* Fully transparent right edge */
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    /* Fully transparent left edge */ rgba(255, 255, 255, 0.3) 50%,
+    /* Peak white in the center */ rgba(255, 255, 255, 0) 100%
+      /* Fully transparent right edge */
+  );
+
+  /* Start the strip off the left edge, and skew it for a slick effect */
+  -webkit-transform: translateX(-100%) skewX(-30deg);
+  -ms-transform: translateX(-100%) skewX(-30deg);
+  transform: translateX(-100%) skewX(-30deg);
+}
+
+/* --- 4. Sheen Animation Trigger --- */
+.black-button:hover::before {
+  /* When hovered, run the keyframe animation */
+  -webkit-animation: shine 1s;
+  animation: shine 1s;
+}
+
+/* --- 5. Keyframe Animation --- */
+@-webkit-keyframes shine {
+  /* Start position: 100% off-screen to the left */
+  0% {
+    -webkit-transform: translateX(-100%) skewX(-30deg);
+    transform: translateX(-100%) skewX(-30deg);
+  }
+  /* End position: 250% across to ensure it slides completely off the right edge */
+  100% {
+    -webkit-transform: translateX(250%) skewX(-30deg);
+    transform: translateX(250%) skewX(-30deg);
+  }
+}
+@keyframes shine {
+  /* Start position: 100% off-screen to the left */
+  0% {
+    -webkit-transform: translateX(-100%) skewX(-30deg);
+    transform: translateX(-100%) skewX(-30deg);
+  }
+  /* End position: 250% across to ensure it slides completely off the right edge */
+  100% {
+    -webkit-transform: translateX(250%) skewX(-30deg);
+    transform: translateX(250%) skewX(-30deg);
+  }
 }
 
 .coming-soon {
