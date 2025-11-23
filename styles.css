@@ -20,7 +20,7 @@
 }
 
 [id] {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 40px;
 }
 
 html {
@@ -269,7 +269,7 @@ footer {
   width: 48px;
   height: 48px;
   display: inline-block;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   -webkit-filter: invert(15%) sepia(74%) saturate(7386%) hue-rotate(328deg)
     brightness(97%) contrast(107%);
   filter: invert(15%) sepia(74%) saturate(7386%) hue-rotate(328deg)
@@ -414,6 +414,10 @@ footer {
   .album-date-br {
     display: none;
   }
+
+  /* [id] {
+    scroll-margin-top: -100px;
+  } */
 
   .heading-text {
     font-size: 1em;

@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 
 document.getElementById(
   "copyright-year"
-).textContent = ` © Shim Shams ${currentYear}`;
+).textContent = ` © The Shim Shams ${currentYear}`;
 
 // modal
 document.addEventListener("DOMContentLoaded", function () {
