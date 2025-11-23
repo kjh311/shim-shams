@@ -65,6 +65,8 @@ footer {
   /* Remove default text decoration */
   text-decoration: none;
   /* Smooth transition for any text color changes */
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   /* Optional: Sets the color of the link text */
   color: #f8f9fa; /* Assuming light text for a dark background */
@@ -76,6 +78,8 @@ footer {
   position: absolute;
   bottom: -0px; /* Position the underline below the text */
   left: 50%; /* Start the left edge at 50% (the center) */
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(
     -50%
   ); /* Shift it back by half its current width to center it */
@@ -86,6 +90,8 @@ footer {
   /* background-color: #c9104f; Use the primary blue color for the underline */
   background-color: rgba(0, 0, 0, 0);
   /* Enable smooth animation for the width change */
+  -webkit-transition: width 0.3s ease-out;
+  -o-transition: width 0.3s ease-out;
   transition: width 0.3s ease-out;
 }
 
@@ -167,16 +173,16 @@ footer {
 }
 
 /* .nav-link {
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-}
-
-.navbar-nav .nav-link:hover {
-  color: #f0f0f0 !important;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-} */
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #f0f0f0 !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  } */
 
 .heading-text {
   border-bottom: 5px solid var(--logo-color);
@@ -456,8 +462,8 @@ footer {
   }
 
   /* [id] {
-    scroll-margin-top: -100px;
-  } */
+      scroll-margin-top: -100px;
+    } */
 
   .heading-text {
     font-size: 1em;
@@ -468,8 +474,8 @@ footer {
   }
 
   /* .navbar-nav .nav-link:hover {
-    border-bottom: 2px solid var(--logo-color);
-  } */
+      border-bottom: 2px solid var(--logo-color);
+    } */
 
   .carousel-control-prev:hover,
   .carousel-control-next:hover,
