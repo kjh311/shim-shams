@@ -46,22 +46,62 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // CLOSE DROPDOWN AFTER SCROLL
+// document.addEventListener("DOMContentLoaded", function () {
+//   var navbarCollapse = document.getElementById("navbarNavDropdown");
+
+//   var navLinks = navbarCollapse.querySelectorAll(
+//     ".nav-link, .dropdown-item, .navbar-brand"
+//   );
+
+//   var bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+//   navLinks.forEach(function (link) {
+//     link.addEventListener("click", function (event) {
+//       if (
+//         this.hash &&
+//         this.hash !== "#" &&
+//         !this.getAttribute("data-bs-toggle")
+//       ) {
+//         if (navbarCollapse.classList.contains("show")) {
+//           bsCollapse.hide();
+//         }
+//       }
+//     });
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Get the main collapse container
   var navbarCollapse = document.getElementById("navbarNavDropdown");
 
-  var navLinks = navbarCollapse.querySelectorAll(
-    ".nav-link, .dropdown-item, .navbar-brand"
+  // Select all links INSIDE the collapse container (nav-link, dropdown-item)
+  var collapseLinks = navbarCollapse.querySelectorAll(
+    ".nav-link, .dropdown-item"
   );
 
+  // Select the navbar-brand link, which is OUTSIDE the collapse container
+  var brandLink = document.querySelector(".navbar-brand");
+
+  // Combine the lists: start with collapse links and add the brand link if it exists
+  var linksToMonitor = Array.from(collapseLinks);
+  if (brandLink) {
+    linksToMonitor.push(brandLink);
+  }
+
+  // Initialize the Bootstrap Collapse object
   var bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
 
-  navLinks.forEach(function (link) {
+  linksToMonitor.forEach(function (link) {
     link.addEventListener("click", function (event) {
+      // Check if the link is an internal anchor and if the menu is currently open
+      // We exclude links that have data-bs-toggle (like the dropdown toggle and modal links)
       if (
         this.hash &&
         this.hash !== "#" &&
         !this.getAttribute("data-bs-toggle")
       ) {
+        // If the menu is currently open (has 'show' class), hide it
+        // This check is important as only the collapse menu can be hidden
         if (navbarCollapse.classList.contains("show")) {
           bsCollapse.hide();
         }
