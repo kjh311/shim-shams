@@ -315,12 +315,10 @@ footer {
   }
 }
 @keyframes shine {
-  /* Start position: 100% off-screen to the left */
   0% {
     -webkit-transform: translateX(-100%) skewX(-30deg);
     transform: translateX(-100%) skewX(-30deg);
   }
-  /* End position: 250% across to ensure it slides completely off the right edge */
   100% {
     -webkit-transform: translateX(250%) skewX(-30deg);
     transform: translateX(250%) skewX(-30deg);
