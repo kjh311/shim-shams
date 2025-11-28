@@ -531,6 +531,82 @@ footer {
   font-size: 0.8em;
 }
 
+/* animated navbar toggler icon  */
+.animated-icon {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  /* Center bars vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/* Style for the three horizontal bars */
+.animated-icon span {
+  display: block;
+  position: absolute; /* Allows for easy overlay and rotation */
+  height: 3px;
+  width: 100%;
+  background: white; /* Matches your navbar-dark text color */
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out; /* Smooth transition for rotation/movement */
+}
+
+/* Position the three bars within the container */
+.animated-icon span:nth-child(1) {
+  top: 0px;
+}
+.animated-icon span:nth-child(2) {
+  top: 11px; /* Center bar */
+}
+.animated-icon span:nth-child(3) {
+  top: 22px;
+}
+
+/* --- 2. Expanded State (Animation to 'X') --- */
+
+/* When the toggler button is NOT collapsed (i.e., the menu is open) */
+.navbar-toggler:not(.collapsed) .animated-icon span:nth-child(1) {
+  top: 11px; /* Move top bar to center */
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); /* Rotate 45deg past 90deg */
+}
+
+.navbar-toggler:not(.collapsed) .animated-icon span:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+  left: -0px; /* Optional: Slide it out quickly */
+}
+
+.navbar-toggler:not(.collapsed) .animated-icon span:nth-child(3) {
+  top: 11px; /* Move bottom bar to center */
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg); /* Rotate in the opposite direction */
+}
+
 @media (min-width: 768px) {
   .album-date-br {
     display: none;
