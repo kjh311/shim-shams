@@ -381,8 +381,13 @@ footer {
   opacity: 0.6;
 }
 
+.get-merch-link {
+  margin-top: 40px;
+}
+
 .fa-shopping-cart,
-.fa-music {
+.fa-music,
+.fa-store {
   color: var(--logo-color);
 }
 
