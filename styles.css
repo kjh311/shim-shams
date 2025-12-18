@@ -63,6 +63,10 @@ footer {
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5) !important;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .animated-link {
   position: relative;
   text-decoration: none;
