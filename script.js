@@ -144,3 +144,53 @@ document.addEventListener("DOMContentLoaded", (event) => {
     visibility: "visible",
   });
 });
+
+//load show dates from google sheets:
+// PASTE YOUR PUBLISHED CSV URL HERE
+const SHEET_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9br01FcbJsPeHxaRnCCcXUdjJHggTmqRDYP1nY8DDf4bQQKuhRkFBrC3sr3que6F-TgBzZ1i-EiB3/pub?gid=0&single=true&output=csv";
+
+async function fetchTourDates() {
+  const listElement = document.getElementById("dates-list");
+
+  try {
+    const response = await fetch(SHEET_CSV_URL);
+    const data = await response.text();
+
+    // Simple CSV Parser
+    const rows = data.split("\n").slice(1); // Skip header row
+    let htmlContent = "";
+
+    rows.forEach((row) => {
+      // Split by comma, handling potential quotes
+      const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+
+      if (columns.length >= 3) {
+        const venue = columns[0].replace(/"/g, "").trim();
+        const date = columns[1].replace(/"/g, "").trim();
+        const time = columns[2].replace(/"/g, "").trim();
+
+        if (venue && date) {
+          htmlContent += `
+                            <div class="show-entry">
+                                <h3 class="show-venue">${venue}</h3>
+                                <h3 class="show-date">${date}</h3>
+                                <span class="show-time">${time}</span>
+                            </div>
+                        `;
+        }
+      }
+    });
+
+    listElement.innerHTML =
+      htmlContent ||
+      '<p class="status-msg">No upcoming shows at the moment.</p>';
+  } catch (error) {
+    console.error("Error fetching tour dates:", error);
+    listElement.innerHTML =
+      '<p class="status-msg">Unable to load tour dates at this time.</p>';
+  }
+}
+
+// Initialize fetch on load
+window.onload = fetchTourDates;

@@ -602,6 +602,41 @@ footer {
   top: 22px;
 }
 
+#tour-dates-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.show-entry {
+  margin-bottom: 40px;
+}
+
+.show-venue {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.show-date {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.show-time {
+  font-size: 1.2rem;
+  color: #c9104f; /* Branding color */
+  font-weight: 600;
+}
+
+/* Loading and Error states */
+.status-msg {
+  font-style: italic;
+  color: #888;
+}
+
 /* --- 2. Expanded State (Animation to 'X') --- */
 
 /* When the toggler button is NOT collapsed (i.e., the menu is open) */
