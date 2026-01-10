@@ -44,8 +44,16 @@ footer {
   width: 100vw;
 }
 
+.buy-album-link {
+  margin-top: 0 !important;
+}
+
 #contact {
   margin-bottom: 80px;
+}
+
+.album-art-custom {
+  max-width: 500px;
 }
 
 .gallery-image {
